@@ -1,372 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Sound Shop</title>
-  </head>
 
-  <body>
-    <main class="main">
-      <!-- Header  -->
-      <div class="header">
-        <div class="logo">
-          <h2 class="logo-text">Sound<span>Store</span></h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Sound Shop</title>
+</head>
+
+<body>
+  <main class="main">
+    <!-- Header  -->
+    <div class="header">
+      <div class="logo">
+        <h2 class="logo-text">Sound<span>Store</span></h2>
+      </div>
+
+      <div class="menu">
+        <div class="search">
+          <input class="search-input" type="search" id="search" />
+          <label for="search"><img class="search-img" src="img/menu/search.svg" alt="" /></label>
         </div>
-
-        <div class="menu">
-          <div class="search">
-            <input class="search-input" type="search" id="search" />
-            <label for="search"
-              ><img class="search-img" src="img/menu/search.svg" alt=""
-            /></label>
+        <nav class="menu-nav" id="menu">
+          <div class="menu-nav-item cart">
+            <a href="#"><img class="menu-nav-img" src="img/menu/cart.svg" alt="cart" />
+              <span>Cart</span></a>
           </div>
-          <nav class="menu-nav" id="menu">
-            <div class="menu-nav-item cart">
-              <a href="#"
-                ><img class="menu-nav-img" src="img/menu/cart.svg" alt="cart" />
-                <span>Cart</span></a
-              >
-            </div>
-            <div class="menu-nav-item favorite">
-              <a href="#"
-                ><img
-                  class="menu-nav-img"
-                  src="img/menu/favorite.png"
-                  alt="favorite"
-                />
-                <span>Favorite</span></a
-              >
-            </div>
-            <div class="menu-nav-item login" id="login">
-              <a href="#"
-                ><img
-                  class="menu-nav-img"
-                  src="img/menu/login.svg"
-                  alt="login"
-                />
-                <span>Login</span></a
-              >
-            </div>
-          </nav>
-          <div class="menu-button">
-            <img class="menu-icon" src="img/menu/menu.svg" alt="menu" />
+          <div class="menu-nav-item favorite">
+            <a href="#"><img class="menu-nav-img" src="img/menu/favorite.png" alt="favorite" />
+              <span>Favorite</span></a>
+          </div>
+          <div class="menu-nav-item login" id="login">
+            <a href="#"><img class="menu-nav-img" src="img/menu/login.svg" alt="login" />
+              <span>Login</span></a>
+          </div>
+        </nav>
+        <div class="menu-button">
+          <img class="menu-icon" src="img/menu/menu.svg" alt="menu" />
+        </div>
+      </div>
+    </div>
+    <!-- Intro  -->
+    <div class="intro">
+      <div class="intro-block">
+        <div class="palette">
+          <div class="palette-text">
+            <p class="available">A V A I L A B L E</p>
+            <p class="colours">COLOURS</p>
+          </div>
+          <div class="palette-colours">
+            <ul class="palette-list">
+              <li class="palette-list">
+                <input class="palette-colours_item palette-colours_item-1" value="230"></input>
+              </li>
+              <li class="palette-list">
+                <input class="palette-colours_item palette-colours_item-2" value="180"></input>
+              </li>
+              <li class="palette-list">
+                <input class="palette-colours_item palette-colours_item-3" value="185"></input>
+              </li>
+              <li class="palette-list">
+                <input class="palette-colours_item palette-colours_item-4" value="0"></input>
+              </li>
+              <li class="palette-list">
+                <input class="palette-colours_item palette-colours_item-5" value="30"></input>
+              </li>
+              <li class="palette-list">
+                <input class="palette-colours_item palette-colours_item-6" value="280"></input>
+              </li>
+              <li class="palette-list">
+                <input class="palette-colours_item palette-colours_item-7" value="111"></input>
+              </li>
+              <li class="palette-list">
+                <input class="palette-colours_item palette-colours_item-8" value="320"></input>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <!-- Intro  -->
-      <div class="intro">
-        <div class="intro-block">
-          <div class="palette">
-            <div class="palette-text">
-              <p class="available">A V A I L A B L E</p>
-              <p class="colours">COLOURS</p>
+
+      <div class="intro-block">
+        <div class="product">
+          <div class="product-info">
+            <span>S e l e c t P r o d u c t i m a g e t o d i s p l a y :</span>
+            <input type="range" min="0" max="360" value="0">
+            <div class="product-other-item">
             </div>
-            <div class="palette-colours">
-              <ul class="palette-list">
-                <li class="palette-list">
-                  <input
-                    class="palette-colours_item palette-colours_item-1" value="230"
-                  ></input>
-                </li>
-                <li class="palette-list">
-                  <input
-                    class="palette-colours_item palette-colours_item-2" value="180"
-                  ></input>
-                </li>
-                <li class="palette-list">
-                  <input
-                    class="palette-colours_item palette-colours_item-3" value="185"
-                  ></input>
-                </li>
-                <li class="palette-list">
-                  <input
-                    class="palette-colours_item palette-colours_item-4" value="0"
-                  ></input>
-                </li>
-                <li class="palette-list">
-                  <input
-                    class="palette-colours_item palette-colours_item-5" value="30"
-                  ></input>
-                </li>
-                <li class="palette-list">
-                  <input class="palette-colours_item palette-colours_item-6" value="280"></input>
-                </li>
-                <li class="palette-list">
-                  <input class="palette-colours_item palette-colours_item-7" value="111"></input>
-                </li>
-                <li class="palette-list">
-                  <input class="palette-colours_item palette-colours_item-8" value="320"></input>
-                </li>
+            <h4 class="product-name">
+            </h4>
+            
+          </div>
+          <div class="product-item">
+            <div class="product-img">
+              <a href="#" class="product-favorite">
+                <span class="product-favorite_line product-favorite_line-top"></span>
+                <span class="product-favorite_line product-favorite_line-right"></span>
+                <span class="product-favorite_line product-favorite_line-bottom"></span>
+                <span class="product-favorite_line product-favorite_line-left"></span>
+                Favorite
+              </a>
+              <img class="change-color" src="/img/catalog/product-preview-airdots.png" alt="">
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="intro-block">
+        <div class="catalog">
+          <div class="catalog-block">
+            <div class="catalog-wrapper">
+              <ul class="catalog-list">
+
               </ul>
             </div>
           </div>
-        </div>
-
-        <div class="intro-block">
-          <div class="product">
-            <div class="product-info">
-              <span
-                >S e l e c t P r o d u c t i m a g e t o d i s p l a y :</span
-              >
-              <input type="range" min="0" max="360" value="0">
-              <div class="product-other-item">
-                <!-- <a href="#"
-                  ><img class="active" src="/img/catalog/airdots-0.png" alt="preview"
-                /></a>
-                <a href="#"
-                  ><img src="/img/catalog/airdots-1.png" alt=""></a>
-                <a href="#"
-                  ><img src="/img/catalog/airdots-2.png" alt="preview"
-                /></a>
-                <a href="#"
-                  ><img src="/img/catalog/airdots-3.png" alt="preview"
-                /></a>
-                <a href="#"><img src="/img/catalog/airdots-4.png" alt="preview" /></a> -->
-              </div>
-              <h4 class="product-name">
-              </h4>
+          <div class="catalog-arrow">
+            <div class="catalog-arrow-up">
+              <a href="#" class="fas fa-arrow-up" id="arrow-up"></a>
             </div>
-            <div class="product-item">
-              <div class="product-img">
-                <img class="change-color" src="/img/catalog/product-preview-airdots.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="intro-block">
-          <div class="catalog">
-            <div class="catalog-block">
-              <div class="catalog-wrapper">
-                <ul class="catalog-list">
-                  <!-- <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/airdots-0.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>Air</p>
-                      <p>Duds</p>
-                    </h4>
-                  </li>
-                  <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/product-preview-2.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>DER</p>
-                      <p>EDIO</p>
-                    </h4>
-                  </li>
-                  <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/beats-0.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>DRE</p>
-                      <p>EDIO</p>
-                    </h4>
-                  </li>
-                  <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/airpods-0.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>AIR</p>
-                      <p>POP</p>
-                    </h4>
-                  </li>
-                  <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/beats-0.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>QWE</p>
-                      <p>EDIO</p>
-                    </h4>
-                  </li>
-                  <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/product-preview-6.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>DSA</p>
-                      <p>EDIO</p>
-                    </h4>
-                  </li>
-                  <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/product-preview-7.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>BLU</p>
-                      <p>EDIO</p>
-                    </h4>
-                  </li>
-                  <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/product-preview-8.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>BLU</p>
-                      <p>EDIO</p>
-                    </h4>
-                  </li>
-                  <li class="catalog-item">
-                    <img
-                      class="catalog-item_img"
-                      src="img/catalog/product-preview-9.png"
-                      alt="product-preview"
-                    />
-                    <h4 class="catalog-item_text">
-                      <p>BLU</p>
-                      <p>EDIO</p>
-                    </h4>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-            <div class="catalog-arrow">
-              <div class="catalog-arrow-up">
-                <a href="#" class="fas fa-arrow-up" id="arrow-up"></a>
-              </div>
-              <div class="catalog-arrow-down">
-                <a href="#" class="fas fa-arrow-down" id="arrow-down"></a>
-              </div>
+            <div class="catalog-arrow-down">
+              <a href="#" class="fas fa-arrow-down" id="arrow-down"></a>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="payment">
-        <h3 class="payment-title">Payment Options:</h3>
-        <div class="payment-slider">
-          <div class="payment-slider-row">
-            <div class="payment-slider_slide">
-              <a href="#"
-                ><img
-                  class="payment-slider_slide_img"
-                  src="img/payment/1.png"
-                  alt="payment"
-              /></a>
-            </div>
-            <div class="payment-slider_slide">
-              <a href="#"
-                ><img
-                  class="payment-slider_slide_img"
-                  src="img/payment/2.png"
-                  alt="payment"
-              /></a>
-            </div>
-            <div class="payment-slider_slide">
-              <a href="#"
-                ><img
-                  class="payment-slider_slide_img"
-                  src="img/payment/3.png"
-                  alt="payment"
-              /></a>
-            </div>
-          </div>
-          <div class="payment-slider-row">
-            <div class="payment-slider_slide">
-              <a href="#"
-                ><img
-                  class="payment-slider_slide_img"
-                  src="img/payment/4.png"
-                  alt="payment"
-              /></a>
-            </div>
-            <div class="payment-slider_slide">
-              <a href="#"
-                ><img
-                  class="payment-slider_slide_img"
-                  src="img/payment/5.png"
-                  alt="payment"
-              /></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="features">
-        <h3 class="features-title">F E A T U R E S :</h3>
-        <div class="features-link">
-          <ul class="features-link-list">
-            <li class="features-link-item">
-              <p class="features-item_name">3D Stereo Music Sound</p>
-            </li>
-            <li class="features-link-item">
-              <p class="features-item_name">Air Control Music String</p>
-            </li>
-            <li class="features-link-item">
-              <p class="features-item_name">24 BIT Music Transmit</p>
-            </li>
-          </ul>
-          <ul class="features-link-list">
-            <li class="features-link-item">
-              <p class="features-item_name">Line in/Line out</p>
-            </li>
-            <li class="features-link-item">
-              <p class="features-item_name">Compatible with Android/iPhones</p>
-            </li>
-            <li class="features-link-item">
-              <p class="features-item_name">
-                57mm Ultra Big Drive Units for Bass
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-
-    <div class="popup-login">
-      <h4>Login</h4>
-      <form>
-        <legend class="popup-sign-in active">
-          <input type="login" placeholder="Введите логин" id="sign-in" />
-          <input type="password" placeholder="Введите пароль" />
-        </legend>
-        <legend class="popup-sign-up">
-          <input type="login" placeholder="Придумайте логин" id="sign-up" />
-          <input type="password" placeholder="Придумайте пароль"/>
-          <input type="email" placeholder="Введите email" />
-        </legend>
-      </form>
-      <div class="popup-button">
-        <button class="popup-button-sign-in">Sign In</button>
-        <button class="popup-button-sign-up active">Sign Up</button>
-      </div>
-
-      <div class="popup-login-close"></div>
     </div>
-    <!-- Script -->
-    <script src="./dist/main.js"></script>
-  </body>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="payment">
+      <h3 class="payment-title">Payment Options:</h3>
+      <div class="payment-slider">
+        <div class="payment-slider-row">
+          <div class="payment-slider_slide">
+            <a href="#"><img class="payment-slider_slide_img" src="img/payment/1.png" alt="payment" /></a>
+          </div>
+          <div class="payment-slider_slide">
+            <a href="#"><img class="payment-slider_slide_img" src="img/payment/2.png" alt="payment" /></a>
+          </div>
+          <div class="payment-slider_slide">
+            <a href="#"><img class="payment-slider_slide_img" src="img/payment/3.png" alt="payment" /></a>
+          </div>
+        </div>
+        <div class="payment-slider-row">
+          <div class="payment-slider_slide">
+            <a href="#"><img class="payment-slider_slide_img" src="img/payment/4.png" alt="payment" /></a>
+          </div>
+          <div class="payment-slider_slide">
+            <a href="#"><img class="payment-slider_slide_img" src="img/payment/5.png" alt="payment" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="features">
+      <h3 class="features-title">F E A T U R E S :</h3>
+      <div class="features-link">
+        <ul class="features-link-list">
+          <li class="features-link-item">
+            <p class="features-item_name">3D Stereo Music Sound</p>
+          </li>
+          <li class="features-link-item">
+            <p class="features-item_name">Air Control Music String</p>
+          </li>
+          <li class="features-link-item">
+            <p class="features-item_name">24 BIT Music Transmit</p>
+          </li>
+        </ul>
+        <ul class="features-link-list">
+          <li class="features-link-item">
+            <p class="features-item_name">Line in/Line out</p>
+          </li>
+          <li class="features-link-item">
+            <p class="features-item_name">Compatible with Android/iPhones</p>
+          </li>
+          <li class="features-link-item">
+            <p class="features-item_name">
+              57mm Ultra Big Drive Units for Bass
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="popup-login">
+    <h4>Login</h4>
+    <form>
+      <legend class="popup-sign-in active">
+        <input type="login" placeholder="Введите логин" id="sign-in" />
+        <input type="password" placeholder="Введите пароль" />
+      </legend>
+      <legend class="popup-sign-up">
+        <input type="login" placeholder="Придумайте логин" id="sign-up" />
+        <input type="password" placeholder="Придумайте пароль" />
+        <input type="email" placeholder="Введите email" />
+      </legend>
+    </form>
+    <div class="popup-button">
+      <button class="popup-button-sign-in">Sign In</button>
+      <button class="popup-button-sign-up active">Sign Up</button>
+    </div>
+
+    <div class="popup-login-close"></div>
+  </div>
+
+  <div class="popup-favorite">
+    <h4>Favorite</h4>
+      <div class="popup-favorite-block">
+        <ul class="popup-favorite-list">
+
+        </ul>
+      </div>
+    <div class="popup-favorite-close"></div>
+  </div>
+  </div>
+  <!-- Script -->
+  <script src="./dist/main.js"></script>
+</body>
+
 </html>

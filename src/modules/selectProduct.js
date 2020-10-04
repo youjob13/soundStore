@@ -1,9 +1,13 @@
+import addFavorite from './addFavorite';
+
 const selectProduct = () => {
     const product = document.querySelector('.product-img').querySelector('img'),
         titleProduct = document.querySelector('.product-name'),
         previewPhoto = document.querySelector('.product-other-item'),
         ul = document.querySelector('.catalog-list');
-    let previewPhotos;
+    let previewPhotos,
+        currentItem;
+    const favoriteArr = [];
     fetch("catalog/catalog.json", {
         method: "GET",
         headers: {
@@ -19,11 +23,24 @@ const selectProduct = () => {
         getItem(result[0]);
         result.forEach(item => getCatalog(item));
         document.addEventListener('click', e => {
-            result.forEach(item => {
-                if (e.target.getAttribute('src') === item.img[0]) {
-                    getItem(item);
-                }
-            });
+            if (e.target.closest('.catalog-item')) {
+                result.forEach(item => {
+                    if (e.target.getAttribute('src') === item.img[0]) {
+                        getItem(item);
+                    }
+                });
+            }
+            if (e.target.closest('.popup-favorite-item')) {
+                favoriteArr.forEach(item => {
+                    if (item.name.replace(/<br>/, '') === e.target.closest('.popup-favorite-item').querySelector('p').textContent) {
+                        getItem(item);
+                    }
+                });
+            }
+            if (e.target.closest('.product-favorite')) {
+                favoriteArr.push(currentItem);
+                addFavorite(favoriteArr);
+            }
         });
         previewPhotos = document.querySelector('.product-other-item').querySelectorAll('img');
         document.addEventListener('mouseover', e => {
@@ -72,6 +89,7 @@ const selectProduct = () => {
             getPreviewPhoto(elem);
         });
         previewPhotos = document.querySelector('.product-other-item').querySelectorAll('img');
+        currentItem = catalogItem;
     };
 };
 

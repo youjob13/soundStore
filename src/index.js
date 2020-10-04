@@ -7,6 +7,8 @@ import selectProduct from './modules/selectProduct';
 import selectColor from './modules/selectColor';
 import toggleLogin from './modules/toggleLogin';
 import selectRegistration from './modules/selectRegistration';
+import popupFavorite from './modules/popupFavorite';
+
 
 toggleMenu();
 sliderCatalog();
@@ -15,3 +17,4 @@ selectProduct();
 selectColor();
 toggleLogin();
 selectRegistration();
+popupFavorite();
