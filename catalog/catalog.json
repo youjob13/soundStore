@@ -1,0 +1,17 @@
+[{
+        "name": "Air<br>Duds",
+        "img": ["img/catalog/airdots-0.png", "img/catalog/airdots-1.png", "img/catalog/airdots-2.png", "img/catalog/airdots-3.png", "img/catalog/airdots-4.png"]
+    },
+    {
+        "name": "Dre<br>Beats",
+        "img": ["img/catalog/beats-0.png", "img/catalog/beats-1.png", "img/catalog/beats-2.png", "img/catalog/beats-3.png"]
+    },
+    {
+        "name": "Air<br>Pups",
+        "img": ["img/catalog/airpods-0.png", "img/catalog/airpods-1.png", "img/catalog/airpods-2.png", "img/catalog/airpods-3.png", "img/catalog/airpods-4.png"]
+    },
+    {
+        "name": "Cyb<br>punk",
+        "img": ["img/catalog/cyberheadphone-0.png"]
+    }
+]
