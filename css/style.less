@@ -47,6 +47,16 @@
 @problems-color: #e8e8e8;
 
 //settings
+@keyframes "anime" {
+  from {
+    transform: scale(1) rotate(45deg);
+  }
+
+  to {
+    transform: scale(1.1) rotate(45deg);
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -212,9 +222,44 @@ ul {
   }
 
   &-colours {
-    border: 2px solid #00d1fe;
-    border-bottom: none;
+    position: relative;
+    padding: 10px 4px;
+    &_line {
+      position: absolute;
+      display: block;
 
+      &-top {
+        top: 0;
+        left: 0%;
+        width: 100%;
+        height: 2px;
+        background-color: #00d1fe;
+      }
+
+      &-bottom {
+        bottom: 0%;
+        left: 100%;
+        width: 100%;
+        height: 2px;
+        background-color: inherit;
+      }
+
+      &-left {
+        bottom: 0;
+        left: 0%;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(0deg, transparent, #00d1fe);
+      }
+
+      &-right {
+        bottom: 0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(0deg, transparent, #00d1fe);
+      }
+    }
     &_item {
       position: relative;
       width: 20px;
@@ -289,14 +334,7 @@ ul {
 .colours {
   font-size: 17px;
 }
-@keyframes "anime" {
-  from {
-    transform: scale(1) rotate(45deg);
-  }
-  to {
-    transform: scale(1.1) rotate(45deg);
-  }
-}
+
 //product
 .product {
   display: flex;
@@ -305,7 +343,7 @@ ul {
   max-width: 500px;
 
   &-favorite {
-        position: relative;
+    position: relative;
     color: #2196f3;
     display: flex;
     margin: auto;
@@ -322,35 +360,42 @@ ul {
     overflow: hidden;
     -webkit-transition: .2s;
     transition: .2s;
+
     &:hover &_line-top {
       left: 100%;
       transition: .8s;
       transition-delay: 0.25s;
     }
+
     &:hover &_line-bottom {
       left: -100%;
       transition: .8s;
       transition-delay: 0.25s;
     }
+
     &:hover &_line-left {
       bottom: 100%;
       transition: .8s;
       transition-delay: 0.25s;
     }
+
     &:hover &_line-right {
       top: 100%;
       transition: .8s;
       transition-delay: 0.25s;
     }
+
     &:hover {
       box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
       background-color: #2196f3;
       color: inherit;
       transition-delay: 1s;
     }
+
     &_line {
       position: absolute;
       display: block;
+
       &-top {
         top: 0;
         left: -100%;
@@ -358,6 +403,7 @@ ul {
         height: 2px;
         background: linear-gradient(90deg, transparent, #2196f3);
       }
+
       &-bottom {
         bottom: 0%;
         left: 100%;
@@ -365,6 +411,7 @@ ul {
         height: 2px;
         background: linear-gradient(270deg, transparent, #2196f3);
       }
+
       &-left {
         bottom: -100%;
         left: 0%;
@@ -372,6 +419,7 @@ ul {
         height: 100%;
         background: linear-gradient(0deg, transparent, #2196f3);
       }
+
       &-right {
         top: -100%;
         right: 0%;
@@ -722,7 +770,6 @@ ul {
       width: 25px;
       height: 4px;
       transform: rotateZ(90deg);
-
       background-color: #fff;
     }
   }
@@ -796,40 +843,37 @@ ul {
 }
 
 //blur popup
-#blur {
-}
+#blur {}
 
 .change-color {
   z-index: 1;
   --module-color: 0deg;
   filter: hue-rotate(var(--module-color));
-  clip-path: polygon(
-    210px 279px,
-    214px 269px,
-    221px 259px,
-    232px 248px,
-    249px 241px,
-    261px 239px,
-    279px 241px,
-    370px 265px,
-    391px 271px,
-    402px 280px,
-    413px 296px,
-    416px 317px,
-    416px 503px,
-    412px 516px,
-    405px 528px,
-    397px 536px,
-    380px 546px,
-    284px 568px,
-    266px 569px,
-    250px 568px,
-    233px 556px,
-    220px 548px,
-    211px 532px,
-    207px 520px,
-    207px 286px
-  );
+  clip-path: polygon(210px 279px,
+      214px 269px,
+      221px 259px,
+      232px 248px,
+      249px 241px,
+      261px 239px,
+      279px 241px,
+      370px 265px,
+      391px 271px,
+      402px 280px,
+      413px 296px,
+      416px 317px,
+      416px 503px,
+      412px 516px,
+      405px 528px,
+      397px 536px,
+      380px 546px,
+      284px 568px,
+      266px 569px,
+      250px 568px,
+      233px 556px,
+      220px 548px,
+      211px 532px,
+      207px 520px,
+      207px 286px);
 
   /*Firefox*/
   clip-path: url("#clipPolygon");
