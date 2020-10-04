@@ -1,7 +1,7 @@
-const addFavorite = (arr) => {
+const addFavorite = (arr, color) => {
     const favoriteList = document.querySelector('.popup-favorite-list');
     favoriteList.textContent = '';
-    arr.forEach(item => {
+    arr.forEach((item, index) => {
         const favorite = document.createElement('li');
         const favoriteText = document.createElement('p');
         const favoriteImg = document.createElement('img');
@@ -12,6 +12,11 @@ const addFavorite = (arr) => {
         favoriteList.append(favorite);
         favorite.append(favoriteText);
         favorite.append(favoriteImg);
+        color.forEach((elem, i) => {
+            if (index === i) {
+                favoriteImg.setAttribute('style', `${elem}`);
+            }
+        });
     });
 };
 

@@ -1,9 +1,10 @@
+import addFavorite from './addFavorite';
+
 const selectColor = () => {
     const colorItems = document.querySelectorAll('.palette-colours_item');
     const photoItem = document.querySelector('.change-color');
     const addClass = (elem, index) => {
         elem.classList.add('active');
-        console.log(elem);
         photoItem.style.setProperty('--module-color', elem.value + 'deg');
     };
     const removeClass = (elem) => {

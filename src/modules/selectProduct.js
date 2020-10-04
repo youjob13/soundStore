@@ -7,7 +7,10 @@ const selectProduct = () => {
         ul = document.querySelector('.catalog-list');
     let previewPhotos,
         currentItem;
-    const favoriteArr = [];
+    const favorite = {
+        favoriteArr: [],
+        favoriteColor: []
+    };
     fetch("catalog/catalog.json", {
         method: "GET",
         headers: {
@@ -31,15 +34,20 @@ const selectProduct = () => {
                 });
             }
             if (e.target.closest('.popup-favorite-item')) {
-                favoriteArr.forEach(item => {
-                    if (item.name.replace(/<br>/, '') === e.target.closest('.popup-favorite-item').querySelector('p').textContent) {
-                        getItem(item);
-                    }
+                favorite.favoriteArr.forEach(item => {
+                    favorite.favoriteColor.forEach(elem => {
+                        if (item.name.replace(/<br>/, '') === e.target.closest('.popup-favorite-item').querySelector('p').textContent &&
+                            e.target.closest('.popup-favorite-item').querySelector('img').getAttribute('style').replace(/\D/gi, '') === elem) {
+                            getFavoriteItem(item, elem);
+                        }
+                    });
+
                 });
             }
             if (e.target.closest('.product-favorite')) {
-                favoriteArr.push(currentItem);
-                addFavorite(favoriteArr);
+                favorite.favoriteArr.push(currentItem);
+                favorite.favoriteColor.push(product.getAttribute('style').replace(/\D/gi, ''));
+                addFavorite(favorite.favoriteArr, favorite.favoriteColor);
             }
         });
         previewPhotos = document.querySelector('.product-other-item').querySelectorAll('img');
@@ -78,6 +86,19 @@ const selectProduct = () => {
         img.setAttribute('src', `${elem.img[0]}`);
         ul.append(li);
         li.append(img);
+    };
+
+    const getFavoriteItem = (catalogItem, colorItem) => {
+        previewPhoto.textContent = '';
+        const photoArr = catalogItem.img;
+        product.setAttribute('src', `${photoArr[0]}`);
+        product.style.setProperty('--module-color', colorItem + 'deg');
+        titleProduct.innerHTML = `${catalogItem.name}`;
+        photoArr.forEach((elem, i) => {
+            getPreviewPhoto(elem, colorItem);
+        });
+        previewPhotos = document.querySelector('.product-other-item').querySelectorAll('img');
+        currentItem = catalogItem;
     };
 
     const getItem = (catalogItem) => {
