@@ -1012,7 +1012,6 @@ input[type="range"] {
       margin-right: 0;
       &-item {
         padding: 10px;
-        
       }
     }
   }
@@ -1026,6 +1025,9 @@ input[type="range"] {
 }
 
 @media (max-width: 575px) {
+  .main {
+    padding-bottom: 30px;
+  }
   .product {
     &-name {
       font-size: 40px;
@@ -1033,7 +1035,12 @@ input[type="range"] {
   }
 
   .menu {
+    &-button {
+      z-index: 10000;
+    }
     &-nav {
+      width: 100%;
+      z-index: 9999;
       top: 0;
       display: flex;
       background-color: black;
@@ -1047,13 +1054,25 @@ input[type="range"] {
   }
 
   .palette {
+    display: flex;
+    margin-top: 34px;
     &-text {
-      transform: translateY(-22px) rotateZ(-90deg);
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translateY(-50%) rotateZ(-90deg);
     }
 
     transform: rotateZ(90deg);
     position: absolute;
     left: 50%;
     top: -5%;
+  }
+  .features {
+    padding: 0;
+    padding-left: 15px;
+    &-link-list {
+      padding: 0;
+    }
   }
 }
