@@ -160,6 +160,7 @@ ul {
   }
 
   &-input {
+    width: 180px;
     .reg();
     border: none;
     background-color: transparent;
@@ -179,6 +180,7 @@ ul {
 
   &-button {
     top: 3%;
+    z-index: 10000;
     position: fixed;
     right: 1%;
   }
@@ -982,7 +984,7 @@ input[type="range"] {
     }
   }
 }
-@media (min-height: 1025px) {
+@media (min-height: 1023px) {
   .product {
     text-align: center;
     margin-top: 200px;
@@ -995,6 +997,21 @@ input[type="range"] {
     &-name {
       font-size: 150px;
       margin: 40px 0 0 0;
+    }
+  }
+  .features {
+    padding: 0;
+    &-title {
+      text-align: center;
+    }
+
+    &-link {
+      justify-content: center;
+    }
+
+    &-link-list {
+      margin: 0 5px;
+      padding: 0;
     }
   }
 }
@@ -1083,10 +1100,12 @@ input[type="range"] {
       font-size: 40px;
     }
   }
-
+  .search {
+    transform: translateX(-10px);
+  }
   .menu {
     &-button {
-      z-index: 10000;
+      right: 0;
     }
     &-nav {
       transition: 0.2s;
@@ -1099,7 +1118,7 @@ input[type="range"] {
       justify-content: center;
       transform: translate(-50%, -100vh);
     }
-
+    
     &-nav.active {
       transform: translate(-50%, 0px);
     }
@@ -1121,10 +1140,31 @@ input[type="range"] {
     top: -5%;
   }
   .features {
-    padding: 0;
-    padding-left: 15px;
+    padding: 10px 0;
+    &-title {
+      text-align: center;
+    }
+    &-link {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     &-link-list {
+      margin: 0 5px;
       padding: 0;
+    }
+  }
+}
+@media (max-width: 376px) {
+  .search {
+    &-input {
+      width: 140px;
+    }
+    margin-right: 0;
+    transform: translateX(-24px);
+  }
+  .features {
+    &-link {
+      text-align: center;
     }
   }
 }
