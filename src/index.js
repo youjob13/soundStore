@@ -1,20 +1,17 @@
 'use strict';
 
 import toggleMenu from './modules/menu';
-import sliderCatalog from './modules/sliderCatalog';
-// import selectPhoto from './modules/selectPhoto';
 import selectProduct from './modules/selectProduct';
 import selectColor from './modules/selectColor';
-import toggleLogin from './modules/toggleLogin';
 import selectRegistration from './modules/selectRegistration';
-import popupFavorite from './modules/popupFavorite';
-
+import popupItem from './modules/popupItem';
+import preloader from './modules/preloader';
 
 toggleMenu();
-sliderCatalog();
-// selectPhoto();
 selectProduct();
 selectColor();
-toggleLogin();
 selectRegistration();
-popupFavorite();
+popupItem('.popup-favorite', '.favorite', '.popup-favorite-close');
+popupItem('.popup-login', '#login', '.popup-login-close');
+popupItem('.popup-cart', '.cart', '.popup-cart-close');
+preloader();

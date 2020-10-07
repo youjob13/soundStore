@@ -6,19 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <title>Sound Shop</title>
+  <link rel="stylesheet" href="css/style.min.css" />
+  <title>Sound Store</title>
 </head>
 
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
   <main class="main">
     <!-- Header  -->
     <div class="header">
       <div class="logo">
         <h2 class="logo-text">Sound<span>Store</span></h2>
       </div>
-
       <div class="menu">
         <div class="search">
           <input class="search-input" type="search" id="search" />
@@ -45,8 +50,9 @@
     </div>
     <!-- Intro  -->
     <div class="intro">
+
       <div class="intro-block">
-        <div class="palette">
+        <div class="palette" >
           <div class="palette-text">
             <p class="available">A V A I L A B L E</p>
             <p class="colours">COLOURS</p>
@@ -87,31 +93,36 @@
       </div>
 
       <div class="intro-block">
-        <div class="product">
+        <div class="product animate__animated animate__backInDown">
           <div class="product-info">
             <span>S e l e c t P r o d u c t i m a g e t o d i s p l a y :</span>
-            <input type="range" min="0" max="360" value="0">
             <div class="product-other-item">
             </div>
             <h4 class="product-name">
             </h4>
-
           </div>
           <div class="product-item">
             <div class="product-img">
               <img class="change-color" src="/img/catalog/product-preview-airdots.png" alt="">
-              <a href="#" class="product-favorite">
-                <span class="product-favorite_line product-favorite_line-top"></span>
-                <span class="product-favorite_line product-favorite_line-right"></span>
-                <span class="product-favorite_line product-favorite_line-bottom"></span>
-                <span class="product-favorite_line product-favorite_line-left"></span>
-                Favorite
-              </a>
+              <div class="buttons">
+<a href="#" class="product-cart">
+  <span class="product-cart_line product-cart_line-top"></span>
+  <span class="product-cart_line product-cart_line-right"></span>
+  <span class="product-cart_line product-cart_line-bottom"></span>
+  <span class="product-cart_line product-cart_line-left"></span>
+  Add to cart
+</a>
+<a href="#" class="product-favorite">
+  <span class="product-favorite_line product-favorite_line-top"></span>
+  <span class="product-favorite_line product-favorite_line-right"></span>
+  <span class="product-favorite_line product-favorite_line-bottom"></span>
+  <span class="product-favorite_line product-favorite_line-left"></span>
+  Favorite
+</a>
+              </div>
             </div>
           </div>
-
         </div>
-
       </div>
 
       <div class="intro-block">
@@ -119,20 +130,13 @@
           <div class="catalog-block">
             <div class="catalog-wrapper">
               <ul class="catalog-list">
-
               </ul>
             </div>
           </div>
-          <div class="catalog-arrow">
-            <div class="catalog-arrow-up">
-              <a href="#" class="fas fa-arrow-up" id="arrow-up"></a>
-            </div>
-            <div class="catalog-arrow-down">
-              <a href="#" class="fas fa-arrow-down" id="arrow-down"></a>
-            </div>
-          </div>
+          
         </div>
       </div>
+
     </div>
   </main>
   <!-- Footer -->
@@ -161,6 +165,7 @@
         </div>
       </div>
     </div>
+
     <div class="features">
       <h3 class="features-title">F E A T U R E S :</h3>
       <div class="features-link">
@@ -191,37 +196,46 @@
       </div>
     </div>
   </footer>
-
+  <!-- Popup -->
+  <!-- Popup login -->
   <div class="popup-login">
-    <h4>Login</h4>
-    <form>
-      <legend class="popup-sign-in active">
-        <input type="login" placeholder="Введите логин" id="sign-in" />
-        <input type="password" placeholder="Введите пароль" />
-      </legend>
-      <legend class="popup-sign-up">
-        <input type="login" placeholder="Придумайте логин" id="sign-up" />
-        <input type="password" placeholder="Придумайте пароль" />
-        <input type="email" placeholder="Введите email" />
-      </legend>
+    <form class="popup-sign-in active">
+      <legend class="legend">Sign In</legend>
+      <input type="login" placeholder="Введите логин" id="sign-in" />
+      <input type="password" placeholder="Введите пароль" />
+    </form>
+    <form class="popup-sign-up">
+      <legend class="legend">Sign Up</legend>
+      <input type="login" placeholder="Придумайте логин" id="sign-up" />
+      <input type="password" placeholder="Придумайте пароль" />
+      <input type="email" placeholder="Введите email" />
     </form>
     <div class="popup-button">
       <button class="popup-button-sign-in">Sign In</button>
       <button class="popup-button-sign-up active">Sign Up</button>
     </div>
-
     <div class="popup-login-close"></div>
   </div>
-
+    <!-- Popup favorite -->
   <div class="popup-favorite">
     <h4>Favorite</h4>
     <div class="popup-favorite-block">
       <ul class="popup-favorite-list">
-
       </ul>
     </div>
     <div class="popup-favorite-close"></div>
   </div>
+    <!-- Popup cart -->
+  <div class="popup-cart">
+    <h4>Cart</h4>
+    <div class="popup-cart-block">
+      <ul class="popup-cart-list">
+      </ul>
+      <div class="checkout">
+        <a class="checkout-btn" href="#">Checkout</a>
+      </div>
+    </div>
+    <div class="popup-cart-close"></div>
   </div>
   <!-- Script -->
   <script src="./dist/main.js"></script>

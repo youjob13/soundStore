@@ -1,19 +1,14 @@
-import addFavorite from './addFavorite';
-
 const selectColor = () => {
     const colorItems = document.querySelectorAll('.palette-colours_item');
     const photoItem = document.querySelector('.change-color');
-    const addClass = (elem, index) => {
+    const addClass = (elem) => {
         elem.classList.add('active');
         photoItem.style.setProperty('--module-color', elem.value + 'deg');
     };
     const removeClass = (elem) => {
         elem.classList.remove('active');
     };
-    const input = document.querySelector('.product-info').querySelector('input');
-    input.addEventListener('input', () => {
-        photoItem.style.setProperty('--module-color', input.value + 'deg');
-    });
+
     document.addEventListener('click', e => {
         if (e.target.matches('.palette-colours_item')) {
             colorItems.forEach((item, index) => {
