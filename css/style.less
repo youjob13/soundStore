@@ -47,6 +47,12 @@
 @problems-color: #e8e8e8;
 
 //settings
+.arrow {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+}
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -95,7 +101,7 @@ ul {
   position: relative;
   background: url(../img/bg/bg_text.jpg) no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -114,7 +120,7 @@ ul {
     z-index: 1;
     transform: translateX(-50%);
     top: 0;
-    height: 10vh;
+    height: 90px;
     position: absolute;
     width: 90%;
     background-color: @light;
@@ -146,18 +152,17 @@ ul {
 .search {
   display: flex;
   z-index: 2;
-  transform: translateX(210px);
   transition: 0.2s;
+  margin-right: 60px;
 
   &.active {
-    transform: translateX(0px);
+    transform: translateX(-270px);
   }
 
   &-input {
     .reg();
     border: none;
     background-color: transparent;
-
     &:focus {
       outline: none;
     }
@@ -179,14 +184,16 @@ ul {
   }
 
   &-nav {
+    position: absolute;
     display: flex;
-    margin-right: 40px;
     transition: 0.2s;
     opacity: 0;
     visibility: hidden;
-    transform: translateX(130%);
-
+    top: 45%;
+    right: 0;
+    z-index: 11;
     &.active {
+      right: 6%;
       opacity: 1;
       visibility: visible;
       transform: translateX(0%);
@@ -608,17 +615,6 @@ ul {
 }
 
 //footer
-//payment
-.payment {
-  &-title {
-    text-align: center;
-  }
-
-  &-wrapper {
-    display: block;
-    margin: 0 auto;
-  }
-}
 
 //features
 .footer {
@@ -626,40 +622,61 @@ ul {
   position: relative;
   width: 100%;
 }
+//payment
+#payment-arrow-right {
+  right: 6%;
+  top: 0%;
+}
+
+#payment-arrow-left {
+  left: 6%;
+  top: 0%;
+}
 
 .payment {
   width: 20%;
   background-color: #000724;
-
+  padding: 10px 0;
   &-title {
+    text-align: center;
     .reg();
-    font-size: 16px;
-  }
-
-  &-slider {
     position: relative;
-    margin: auto;
-    margin-top: 15%;
-    padding-bottom: 1em;
-    width: 80%;
-
+    font-size: 16px;
     &:before {
       content: "";
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: -60%;
+      top: 120%;
       background-color: #fff;
-      width: 65%;
+      width: 70%;
       height: 1px;
     }
+  }
 
+  &-slider {
+    position: relative;
+    margin: auto;
+    padding-bottom: 1em;
+    &_block {
+      position: relative;
+    }
+    &-wrapper {
+      max-width: 80%;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
     &-row {
       display: flex;
       justify-content: center;
     }
 
     &_slide {
+      &_img {
+        display: block;
+        margin: auto;
+      }
       margin: 0 5px;
     }
   }
@@ -668,7 +685,7 @@ ul {
 .features {
   background-color: black;
   width: 80%;
-  padding: 0 30px;
+  padding: 10px 30px;
 
   &-title {
     .reg();
@@ -779,8 +796,8 @@ ul {
   &-cart {
     backdrop-filter: blur(15px);
     display: none;
-    width: 450px;
-    height: 450px;
+    width: 50%;
+    height: 40%;
     position: absolute;
     box-shadow: 1px 1px 4px rgba(14, 14, 14, 0.3);
     left: 50%;
@@ -965,12 +982,31 @@ input[type="range"] {
     }
   }
 }
-
+@media (min-height: 1025px) {
+  .product {
+    text-align: center;
+    margin-top: 200px;
+    display: block;
+    &-img {
+      img {
+        width: 400px;
+      }
+    }
+    &-name {
+      font-size: 150px;
+      margin: 40px 0 0 0;
+    }
+  }
+}
 @media (max-width: 900px) {
   .main {
     height: auto;
   }
-
+  .header {
+    &:after {
+      height: 70px;
+    }
+  }
   .logo-text {
     font-size: 18px;
 
@@ -997,19 +1033,26 @@ input[type="range"] {
       text-align: center;
     }
   }
-
+  .catalog {
+    z-index: 1;
+  }
   .palette {
+    z-index: 1;
     left: 0;
   }
 
   .menu {
     &-nav {
+      transition: 0.2s;
+
       display: block;
       background-color: rgba(255, 255, 255, 0.15);
       right: 0;
       top: 12%;
       position: fixed;
-      margin-right: 0;
+      &.active {
+        right: 0;
+      }
       &-item {
         padding: 10px;
       }
@@ -1017,10 +1060,17 @@ input[type="range"] {
   }
 
   .search {
-    position: absolute;
-    right: 10%;
-    top: 30%;
-    transform: translateX(0px);
+    margin-right: 20px;
+  }
+  .footer {
+    display: block;
+  }
+  .payment,
+  .features {
+    width: 100%;
+    &-title {
+      margin-top: 0;
+    }
   }
 }
 
@@ -1039,12 +1089,14 @@ input[type="range"] {
       z-index: 10000;
     }
     &-nav {
+      transition: 0.2s;
       width: 100%;
       z-index: 9999;
       top: 0;
       display: flex;
       background-color: black;
       left: 50%;
+      justify-content: center;
       transform: translate(-50%, -100vh);
     }
 
