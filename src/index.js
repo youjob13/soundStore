@@ -7,6 +7,7 @@ import selectRegistration from './modules/selectRegistration';
 import popupItem from './modules/popupItem';
 import preloader from './modules/preloader';
 import SliderCarousel from './modules/sliderCarousel';
+import toggleCatalogList from './modules/toggleCatalogList';
 
 toggleMenu();
 selectProduct();
@@ -25,3 +26,4 @@ const sliderFooter = new SliderCarousel({
     infinity: true
 });
 sliderFooter.init();
+toggleCatalogList();

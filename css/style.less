@@ -48,11 +48,13 @@
 
 //settings
 .arrow {
+  cursor: pointer;
   color: #fff;
   font-size: 20px;
   position: absolute;
   top: 0;
 }
+
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -164,6 +166,7 @@ ul {
     .reg();
     border: none;
     background-color: transparent;
+
     &:focus {
       outline: none;
     }
@@ -194,6 +197,7 @@ ul {
     top: 45%;
     right: 0;
     z-index: 11;
+
     &.active {
       right: 6%;
       opacity: 1;
@@ -310,36 +314,31 @@ ul {
       }
 
       &-2 {
-        color: #fff;
-        background-color: #fff;
-      }
-
-      &-3 {
         color: #00fff6;
         background-color: #00fff6;
       }
 
-      &-4 {
+      &-3 {
         color: #ff0000;
         background-color: #ff0000;
       }
 
-      &-5 {
+      &-4 {
         color: #ffea00;
         background-color: #ffea00;
       }
 
-      &-6 {
+      &-5 {
         color: #9c29f4;
         background-color: #9c29f4;
       }
 
-      &-7 {
+      &-6 {
         color: #008000;
         background-color: #008000;
       }
 
-      &-8 {
+      &-7 {
         color: #f40896;
         background-color: #f40896;
       }
@@ -521,6 +520,10 @@ ul {
   transform: translateY(-50%);
   transition: 0.4s;
 
+  &-arrow {
+    display: none;
+  }
+
   &-wrapper {
     overflow-y: scroll;
     height: 200px;
@@ -546,13 +549,6 @@ ul {
       right: 70px;
       position: fixed;
       color: #fff;
-    }
-
-    &.active &-text,
-    &:hover &-text {
-      .reg();
-      visibility: visible;
-      opacity: 1;
     }
 
     &.active,
@@ -624,6 +620,7 @@ ul {
   position: relative;
   width: 100%;
 }
+
 //payment
 #payment-arrow-right {
   right: 6%;
@@ -639,11 +636,13 @@ ul {
   width: 20%;
   background-color: #000724;
   padding: 10px 0;
+
   &-title {
     text-align: center;
     .reg();
     position: relative;
     font-size: 16px;
+
     &:before {
       content: "";
       position: absolute;
@@ -660,15 +659,18 @@ ul {
     position: relative;
     margin: auto;
     padding-bottom: 1em;
+
     &_block {
       position: relative;
     }
+
     &-wrapper {
       max-width: 80%;
       margin: auto;
       position: relative;
       overflow: hidden;
     }
+
     &-row {
       display: flex;
       justify-content: center;
@@ -679,6 +681,7 @@ ul {
         display: block;
         margin: auto;
       }
+
       margin: 0 5px;
     }
   }
@@ -984,23 +987,28 @@ input[type="range"] {
     }
   }
 }
+
 @media (min-height: 1023px) {
   .product {
     text-align: center;
     margin-top: 200px;
     display: block;
+
     &-img {
       img {
         width: 400px;
       }
     }
+
     &-name {
       font-size: 150px;
       margin: 40px 0 0 0;
     }
   }
+
   .features {
     padding: 0;
+
     &-title {
       text-align: center;
     }
@@ -1015,15 +1023,30 @@ input[type="range"] {
     }
   }
 }
+
+@media (min-width: 900px) {
+  .catalog {
+    &-item {
+      &:hover &-text {
+        .reg();
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
 @media (max-width: 900px) {
   .main {
     height: auto;
   }
+
   .header {
     &:after {
       height: 70px;
     }
   }
+
   .logo-text {
     font-size: 18px;
 
@@ -1050,9 +1073,48 @@ input[type="range"] {
       text-align: center;
     }
   }
+
   .catalog {
+    transform: translate(100%, -50%);
+    visibility: hidden;
+    opacity: 0;
     z-index: 1;
+
+    &-arrow {
+      display: block;
+      position: fixed;
+      width: 20px;
+      right: 0;
+      top: 50%;
+      transition: 0.3s;
+      transform: translateY(-50%);
+      color: #fff;
+      &_left {
+        display: block;
+      }
+
+      &_right {
+        display: none;
+      }
+      &.active &_left {
+        display: none;
+      }
+      &.active &_right {
+        display: block;
+      }
+
+      &.active {
+        right: 60px;
+      }
+    }
+
+    &.active {
+      transform: translate(0%, -50%);
+      visibility: visible;
+      opacity: 1;
+    }
   }
+
   .palette {
     z-index: 1;
     left: 0;
@@ -1067,9 +1129,11 @@ input[type="range"] {
       right: 0;
       top: 12%;
       position: fixed;
+
       &.active {
         right: 0;
       }
+
       &-item {
         padding: 10px;
       }
@@ -1079,12 +1143,15 @@ input[type="range"] {
   .search {
     margin-right: 20px;
   }
+
   .footer {
     display: block;
   }
+
   .payment,
   .features {
     width: 100%;
+
     &-title {
       margin-top: 0;
     }
@@ -1095,18 +1162,31 @@ input[type="range"] {
   .main {
     padding-bottom: 30px;
   }
+
+  .header {
+    padding-top: 10px;
+
+    &:after {
+      height: 50px;
+    }
+  }
+
   .product {
     &-name {
       font-size: 40px;
     }
   }
+
   .search {
     transform: translateX(-10px);
   }
+
   .menu {
     &-button {
       right: 0;
+      top: 2%;
     }
+
     &-nav {
       transition: 0.2s;
       width: 100%;
@@ -1118,7 +1198,7 @@ input[type="range"] {
       justify-content: center;
       transform: translate(-50%, -100vh);
     }
-    
+
     &-nav.active {
       transform: translate(-50%, 0px);
     }
@@ -1127,6 +1207,7 @@ input[type="range"] {
   .palette {
     display: flex;
     margin-top: 34px;
+
     &-text {
       position: absolute;
       top: 50%;
@@ -1139,29 +1220,36 @@ input[type="range"] {
     left: 50%;
     top: -5%;
   }
+
   .features {
     padding: 10px 0;
+
     &-title {
       text-align: center;
     }
+
     &-link {
       flex-wrap: wrap;
       justify-content: center;
     }
+
     &-link-list {
       margin: 0 5px;
       padding: 0;
     }
   }
 }
+
 @media (max-width: 376px) {
   .search {
     &-input {
       width: 140px;
     }
+
     margin-right: 0;
     transform: translateX(-24px);
   }
+
   .features {
     &-link {
       text-align: center;

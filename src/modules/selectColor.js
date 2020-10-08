@@ -1,6 +1,7 @@
 const selectColor = () => {
-    const colorItems = document.querySelectorAll('.palette-colours_item');
-    const photoItem = document.querySelector('.change-color');
+    const colorItems = document.querySelectorAll('.palette-colours_item'),
+        photoItem = document.querySelector('.change-color');
+
     const addClass = (elem) => {
         elem.classList.add('active');
         photoItem.style.setProperty('--module-color', elem.value + 'deg');

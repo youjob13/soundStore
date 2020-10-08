@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
-  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <title>Sound Store</title>
 </head>
 
@@ -64,28 +64,25 @@
             <span class="palette-colours_line palette-colours_line-left"></span>
             <ul class="palette-list">
               <li class="palette-list">
-                <input class="palette-colours_item palette-colours_item-1" value="230"></input>
+                <input disabled class="palette-colours_item palette-colours_item-1" value="230"></input>
               </li>
               <li class="palette-list">
-                <input class="palette-colours_item palette-colours_item-2" value="180"></input>
+                <input disabled class="palette-colours_item palette-colours_item-2" value="185"></input>
               </li>
               <li class="palette-list">
-                <input class="palette-colours_item palette-colours_item-3" value="185"></input>
+                <input disabled class="palette-colours_item palette-colours_item-3" value="0"></input>
               </li>
               <li class="palette-list">
-                <input class="palette-colours_item palette-colours_item-4" value="0"></input>
+                <input disabled class="palette-colours_item palette-colours_item-4" value="30"></input>
               </li>
               <li class="palette-list">
-                <input class="palette-colours_item palette-colours_item-5" value="30"></input>
+                <input disabled class="palette-colours_item palette-colours_item-5" value="280"></input>
               </li>
               <li class="palette-list">
-                <input class="palette-colours_item palette-colours_item-6" value="280"></input>
+                <input disabled class="palette-colours_item palette-colours_item-6" value="111"></input>
               </li>
               <li class="palette-list">
-                <input class="palette-colours_item palette-colours_item-7" value="111"></input>
-              </li>
-              <li class="palette-list">
-                <input class="palette-colours_item palette-colours_item-8" value="320"></input>
+                <input disabled class="palette-colours_item palette-colours_item-7" value="320"></input>
               </li>
             </ul>
           </div>
@@ -134,6 +131,22 @@
             </div>
           </div>
         </div>
+        <div class="catalog-arrow" id="catalog-arrow">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-left"
+            class="svg-inline--fa fa-arrow-alt-circle-left fa-w-16 catalog-arrow_left" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512">
+            <path fill="currentColor"
+              d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm116-292H256v-70.9c0-10.7-13-16.1-20.5-8.5L121.2 247.5c-4.7 4.7-4.7 12.2 0 16.9l114.3 114.9c7.6 7.6 20.5 2.2 20.5-8.5V300h116c6.6 0 12-5.4 12-12v-64c0-6.6-5.4-12-12-12z">
+            </path>
+          </svg>
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-right"
+            class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16 catalog-arrow_right" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512">
+            <path fill="currentColor"
+              d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zM140 300h116v70.9c0 10.7 13 16.1 20.5 8.5l114.3-114.9c4.7-4.7 4.7-12.2 0-16.9l-114.3-115c-7.6-7.6-20.5-2.2-20.5 8.5V212H140c-6.6 0-12 5.4-12 12v64c0 6.6 5.4 12 12 12z">
+            </path>
+          </svg>
+        </div>
       </div>
 
     </div>
@@ -145,7 +158,6 @@
       <div class="payment-slider_block">
         <div class="payment-slider-wrapper">
           <div class="payment-slider">
-            <!-- <div class="payment-slider-row"> -->
             <div class="payment-slider_slide">
               <img class="payment-slider_slide_img" src="img/payment/1.png" alt="payment" />
             </div>
@@ -155,15 +167,12 @@
             <div class="payment-slider_slide">
               <img class="payment-slider_slide_img" src="img/payment/3.png" alt="payment" />
             </div>
-            <!-- </div>
-          <div class="payment-slider-row"> -->
             <div class="payment-slider_slide">
               <img class="payment-slider_slide_img" src="img/payment/4.png" alt="payment" />
             </div>
             <div class="payment-slider_slide">
               <img class="payment-slider_slide_img" src="img/payment/5.png" alt="payment" />
             </div>
-            <!-- </div> -->
           </div>
         </div>
         <div class="payment-slider-arrow">
@@ -178,26 +187,26 @@
       <div class="features-link">
         <ul class="features-link-list">
           <li class="features-link-item">
-            <p class="features-item_name">3D Stereo Music Sound</p>
+            <a href="#" class="features-item_name">3D Stereo Music Sound</a>
           </li>
           <li class="features-link-item">
-            <p class="features-item_name">Air Control Music String</p>
+            <a href="#" class="features-item_name">Air Control Music String</a>
           </li>
           <li class="features-link-item">
-            <p class="features-item_name">24 BIT Music Transmit</p>
+            <a href="#" class="features-item_name">24 BIT Music Transmit</a>
           </li>
         </ul>
         <ul class="features-link-list">
           <li class="features-link-item">
-            <p class="features-item_name">Line in/Line out</p>
+            <a href="#" class="features-item_name">Line in/Line out</a>
           </li>
           <li class="features-link-item">
-            <p class="features-item_name">Compatible with Android/iPhones</p>
+            <a href="#" class="features-item_name">Compatible with Android/iPhones</a>
           </li>
           <li class="features-link-item">
-            <p class="features-item_name">
+            <a href="#" class="features-item_name">
               57mm Ultra Big Drive Units for Bass
-            </p>
+            </a>
           </li>
         </ul>
       </div>

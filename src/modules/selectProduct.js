@@ -1,6 +1,6 @@
 import addProduct from './addProduct';
 import deleteProduct from './deleteProduct';
-
+import popupItem from './popupItem';
 
 const selectProduct = () => {
     const product = document.querySelector('.product-img').querySelector('img'),
@@ -35,6 +35,7 @@ const selectProduct = () => {
         result.forEach(item => getCatalog(item));
         ul.children[0].classList.add('active');
         previewPhoto.children[0].classList.add('active');
+        document.querySelector('.change-color').style.setProperty('--module-color', '0deg');
 
         document.addEventListener('click', e => {
             if (e.target.closest('.catalog-item')) {
