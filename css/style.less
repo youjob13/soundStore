@@ -90,7 +90,9 @@ ul {
 }
 
 //убираем scrollbar
-.catalog-wrapper::-webkit-scrollbar {
+.catalog-wrapper::-webkit-scrollbar,
+.popup-cart-block::-webkit-scrollbar,
+.popup-favorite-block::-webkit-scrollbar {
   width: 0;
 }
 
@@ -156,7 +158,7 @@ ul {
   z-index: 2;
   transition: 0.2s;
   margin-right: 60px;
-
+  transform: translateX(0);
   &.active {
     transform: translateX(-270px);
   }
@@ -690,10 +692,11 @@ ul {
 .features {
   background-color: black;
   width: 80%;
-  padding: 10px 30px;
+  padding: 10px 0;
 
   &-title {
     .reg();
+    text-align: center;
     font-size: 16px;
   }
 
@@ -710,7 +713,7 @@ ul {
     }
 
     display: flex;
-
+    justify-content: center;
     &-list {
       padding-right: 70px;
     }
@@ -771,7 +774,10 @@ ul {
       outline: none;
     }
   }
-
+  &-favorite-block,
+  &-cart-block {
+    overflow-y: scroll;
+  }
   &-login-close,
   &-favorite-close,
   &-cart-close {
@@ -860,7 +866,7 @@ ul {
     &-delete {
       position: absolute;
       right: 0;
-      top: 0;
+      top: 10px;
       width: 20px;
       height: 4px;
       background-color: #fff;
@@ -892,9 +898,16 @@ ul {
   }
 
   &-btn {
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    background: initial;
     .reg();
     text-transform: uppercase;
     transition: 0.2s;
+    &:focus {
+      outline: none;
+    }
   }
 }
 
@@ -935,10 +948,10 @@ ul {
   clip-path: url("#clipPolygon");
 }
 
-input[type="range"] {
-  width: 395px;
-  z-index: 1;
-}
+// input[type="range"] {
+//   width: 395px;
+//   z-index: 1;
+// }
 
 //preloader
 .preloader {
@@ -1142,6 +1155,9 @@ input[type="range"] {
 
   .search {
     margin-right: 20px;
+    &.active {
+      transform: translateX(0);
+    }
   }
 
   .footer {
