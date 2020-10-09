@@ -1,6 +1,7 @@
 import addProduct from './addProduct';
 import deleteProduct from './deleteProduct';
-import popupItem from './popupItem';
+import getPhoto from './getPhoto';
+import sliderProduct from './sliderProduct';
 
 const selectProduct = () => {
     const product = document.querySelector('.product-img').querySelector('img'),
@@ -8,6 +9,7 @@ const selectProduct = () => {
         previewPhoto = document.querySelector('.product-other-item'),
         ul = document.querySelector('.catalog-list');
     let previewPhotos,
+        selectSlide = 0,
         currentItem;
     const favorite = {
         favoriteArr: localStorage['favoriteArr'] ? JSON.parse(localStorage['favoriteArr']) : [],
@@ -100,21 +102,26 @@ const selectProduct = () => {
 
 
         });
+    
         previewPhotos = document.querySelector('.product-other-item').querySelectorAll('img');
+        document.addEventListener('click', e => {
+            if (e.target.closest('.product-img') || e.target.closest('.product-arrow')) {
+                selectSlide++;
+                if (selectSlide > previewPhotos.length - 1) {
+                    selectSlide=0;
+                }
+                selectSlide = getPhoto(previewPhotos[selectSlide],selectSlide);
+            }
+        });
         document.addEventListener('mouseover', e => {
             if (e.target.closest('.product-other-item img')) {
-                previewPhotos.forEach(item => {
-                    if (e.target === item) {
-                        getPhoto(item);
-                    } else {
-                        removeClass(item);
-                    }
-                });
+                selectSlide = getPhoto(e.target,selectSlide);
             }
         });
     }).catch((error) => console.error(error));
 
     const toggleClassCatalog = (target) => {
+        selectSlide = 0;
         const catalogItems = document.querySelectorAll('.catalog-item');
         catalogItems.forEach(item => {
             if (item === target) {
@@ -123,14 +130,6 @@ const selectProduct = () => {
                 item.classList.remove('active');
             }
         });
-    };
-
-    const getPhoto = (item) => {
-        item.classList.add('active');
-        product.setAttribute('src', `${item.getAttribute('src')}`);
-    };
-    const removeClass = (item) => {
-        item.classList.remove('active');
     };
 
     const getPreviewPhoto = (elem) => {

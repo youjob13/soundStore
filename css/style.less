@@ -191,12 +191,12 @@ ul {
   }
 
   &-nav {
-    position: absolute;
+    position: fixed;
     display: flex;
     transition: 0.2s;
     opacity: 0;
     visibility: hidden;
-    top: 45%;
+    top: 3%;
     right: 0;
     z-index: 11;
 
@@ -362,7 +362,16 @@ ul {
   margin-top: 50px;
   position: relative;
   max-width: 500px;
-
+  &-arrow {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(50%);
+    width: 30px;
+    color: #fff;
+  }
   &-favorite,
   &-cart {
     position: relative;
@@ -1188,6 +1197,9 @@ ul {
   }
 
   .product {
+    &-arrow {
+      display: flex;
+    }
     &-name {
       font-size: 40px;
     }

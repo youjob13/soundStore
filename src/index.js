@@ -8,6 +8,7 @@ import popupItem from './modules/popupItem';
 import preloader from './modules/preloader';
 import SliderCarousel from './modules/sliderCarousel';
 import toggleCatalogList from './modules/toggleCatalogList';
+// import sliderProduct from './modules/sliderProduct';
 
 toggleMenu();
 selectProduct();
@@ -27,3 +28,4 @@ const sliderFooter = new SliderCarousel({
 });
 sliderFooter.init();
 toggleCatalogList();
+// sliderProduct();
